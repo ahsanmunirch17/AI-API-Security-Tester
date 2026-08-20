@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI API Security Tester</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>AI API Security Tester</h1>
+        <p>Automated Endpoint Vulnerability Assessment</p>
+    </header>
+
+
+    <!-- ========================================= -->
+    <!-- REQUEST CONFIGURATION -->
+    <!-- ========================================= -->
+
+    <section class="card">
+
+        <h2>Target Endpoint</h2>
+
+        <label for="endpoint">
+            Endpoint URL
+        </label>
+
+        <input
+            type="text"
+            id="endpoint"
+            placeholder="https://juice-shop-security-assessment.onrender.com/rest/user/login"
+        >
+
+
+        <div class="row">
+
+            <div class="field">
+
+                <label for="method">
+                    HTTP Method
+                </label>
+
+                <select id="method">
+
+                    <option value="GET">
+                        GET
+                    </option>
+
+                    <option value="POST">
+                        POST
+                    </option>
+
+                    <option value="PUT">
+                        PUT
+                    </option>
+
+                    <option value="PATCH">
+                        PATCH
+                    </option>
+
+                    <option value="DELETE">
+                        DELETE
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- AUTHORIZATION -->
+        <!-- ========================================= -->
+
+        <label for="token">
+
+            Authorization Token
+
+            <span class="optional">
+                (optional)
+            </span>
+
+        </label>
+
+        <input
+            type="password"
+            id="token"
+            placeholder="Bearer eyJ..."
+        >
+
+
+        <!-- ========================================= -->
+        <!-- REQUEST BODY -->
+        <!-- ========================================= -->
+
+        <label for="requestBody">
+
+            Request Body
+
+            <span class="optional">
+                (JSON, optional)
+            </span>
+
+        </label>
+
+        <textarea
+            id="requestBody"
+            rows="10"
+            placeholder='{
+  "email": "test@example.com",
+  "password": "test"
+}'></textarea>
+
+
+        <p class="help-text">
+            Leave the request body empty for GET or DELETE requests
+            that do not require a JSON body.
+        </p>
+
+
+        <!-- ========================================= -->
+        <!-- START -->
+        <!-- ========================================= -->
+
+        <button
+            id="startBtn"
+            onclick="startTest()"
+        >
+            🚀 START SECURITY TEST
+        </button>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- TESTING STATUS -->
+    <!-- ========================================= -->
+
+    <section class="card">
+
+        <h2>Testing Status</h2>
+
+        <div id="status">
+
+            <div class="test pending">
+
+                <span>○</span>
+
+                <span>
+                    Waiting to start...
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- RESULTS -->
+    <!-- ========================================= -->
+
+    <section
+        class="card"
+        id="results"
+        style="display:none;"
+    >
+
+        <h2>
+            AI Security Assessment
+        </h2>
+
+
+        <div class="risk-box">
+
+            <span>
+                Overall Risk
+            </span>
+
+            <strong id="riskLevel">
+                UNKNOWN
+            </strong>
+
+        </div>
+
+
+        <h3>
+            Summary
+        </h3>
+
+        <p id="summary">
+        </p>
+
+
+        <h3>
+            Automated Security Checks
+        </h3>
+
+        <div id="securityChecks">
+
+            <p>
+                No automated security checks have been run.
+            </p>
+
+        </div>
+
+
+        <h3>
+            AI Findings
+        </h3>
+
+        <div id="findings">
+        </div>
+
+
+        <h3>
+            Evidence
+        </h3>
+
+        <div id="evidence">
+        </div>
+
+
+        <h3>
+            Recommendations
+        </h3>
+
+        <ul id="recommendations">
+        </ul>
+
+
+        <!-- ========================================= -->
+        <!-- REPORT BUTTONS -->
+        <!-- ========================================= -->
+
+        <div class="report-buttons">
+
+            <button onclick="viewReport()">
+                📄 VIEW FULL REPORT
+            </button>
+
+            <button onclick="downloadReport()">
+                ⬇ DOWNLOAD REPORT
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>

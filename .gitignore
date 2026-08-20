@@ -1,0 +1,34 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Backup / old development files
+app_backup/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Old / backup application files
+app/*_backup.py
+app/*.before-jwt-fix
+
+# Generated security test reports
+reports/*.json

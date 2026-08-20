@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #1f2937;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+    font-size: 34px;
+}
+
+header p {
+    color: #6b7280;
+    font-size: 17px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.optional {
+    color: #888;
+    font-weight: normal;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+select {
+    background: white;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+    padding: 13px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    background: #2563eb;
+    color: white;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+#startBtn {
+    width: 100%;
+    font-size: 16px;
+}
+
+.test {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 7px;
+}
+
+.pending {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.running {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.success {
+    background: #ecfdf5;
+    color: #047857;
+}
+
+.failed {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.risk-box {
+    padding: 20px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#riskLevel {
+    font-size: 22px;
+}
+
+.finding {
+    border-left: 5px solid #2563eb;
+    background: #f9fafb;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.finding h4 {
+    margin-top: 0;
+}
+
+.evidence {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 15px;
+    border-radius: 7px;
+    margin-bottom: 12px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.report-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.report-buttons button {
+    flex: 1;
+}
+#securityChecks {
+    margin-bottom: 25px;
+}
+
+#securityChecks .finding {
+    margin-bottom: 15px;
+}
+
+#securityChecks .finding h4 {
+    margin-bottom: 10px;
+}
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    resize: vertical;
+    border-radius: 6px;
+}
+
+.help-text {
+    font-size: 13px;
+    opacity: 0.75;
+    margin-top: 4px;
+    margin-bottom: 15px;
+}
+
+.optional {
+    font-size: 12px;
+    opacity: 0.7;
+}
