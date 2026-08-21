@@ -46,7 +46,6 @@ async function startTest() {
     // GET INPUT VALUES
     // =========================================
 
-updateRequestBodyState();
     const endpoint =
         document.getElementById("endpoint").value.trim();
 
@@ -56,10 +55,11 @@ updateRequestBodyState();
     const token =
         document.getElementById("token").value.trim();
 
-    const requestBodyText =
-    requestBody.value.trim();
+    const requestBody =
+        document.getElementById("requestBody");
 
-updateRequestBodyState();
+    const requestBodyText =
+        requestBody.value.trim();
 
 
     // =========================================
