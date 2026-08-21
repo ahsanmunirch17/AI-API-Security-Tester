@@ -1,9 +1,52 @@
+// =========================================
+// METHOD-AWARE REQUEST BODY CONTROL
+// =========================================
+
+function updateRequestBodyState() {
+
+    const method =
+        document.getElementById("method").value;
+
+    const requestBody =
+        document.getElementById("requestBody");
+
+    const bodyAllowed =
+        ["POST", "PUT", "PATCH"].includes(method);
+
+    if (!bodyAllowed) {
+
+        requestBody.value = "";
+        requestBody.disabled = true;
+
+        requestBody.placeholder =
+            `${method} requests normally do not require a JSON body.`;
+
+    } else {
+
+        requestBody.disabled = false;
+
+        requestBody.placeholder =
+`{
+  "email": "test@example.com",
+  "password": "test"
+}`;
+
+    }
+}
+
+document
+    .getElementById("method")
+    .addEventListener("change", updateRequestBodyState);
+
+updateRequestBodyState();
+
 async function startTest() {
 
     // =========================================
     // GET INPUT VALUES
     // =========================================
 
+updateRequestBodyState();
     const endpoint =
         document.getElementById("endpoint").value.trim();
 
@@ -14,7 +57,9 @@ async function startTest() {
         document.getElementById("token").value.trim();
 
     const requestBodyText =
-        document.getElementById("requestBody").value.trim();
+    requestBody.value.trim();
+
+updateRequestBodyState();
 
 
     // =========================================
