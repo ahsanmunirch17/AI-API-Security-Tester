@@ -34,11 +34,54 @@ function updateRequestBodyState() {
     }
 }
 
+
+// =========================================
+// HTTP METHOD HELP TEXT
+// =========================================
+
+function updateMethodHelp() {
+
+    const method =
+        document.getElementById("method").value;
+
+    const methodHelp =
+        document.getElementById("methodHelp");
+
+    const descriptions = {
+
+        GET:
+            "GET requests retrieve data from the API.",
+
+        POST:
+            "POST requests submit data to create a new resource.",
+
+        PUT:
+            "PUT requests replace or update an existing resource.",
+
+        PATCH:
+            "PATCH requests partially update an existing resource.",
+
+        DELETE:
+            "DELETE requests remove a resource from the API."
+
+    };
+
+    methodHelp.innerText =
+        descriptions[method] ||
+        "Select an HTTP method.";
+}
+
+
 document
     .getElementById("method")
     .addEventListener("change", updateRequestBodyState);
 
+document
+    .getElementById("method")
+    .addEventListener("change", updateMethodHelp);
+
 updateRequestBodyState();
+updateMethodHelp();
 
 async function startTest() {
 
